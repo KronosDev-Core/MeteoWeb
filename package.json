@@ -1,0 +1,30 @@
+{
+    "name": "meteoweb-pc",
+    "version": "1.0.0",
+    "description": "MeteoWeb",
+    "main": "server.js",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "cookie-parser": "^1.4.5",
+        "cors": "^2.8.5",
+        "csurf": "^1.11.0",
+        "dotenv": "^8.2.0",
+        "electron": "^9.1.2",
+        "express": "^4.17.1",
+        "express-limiter": "^1.6.1",
+        "express-session": "^1.17.1",
+        "helmet": "^3.23.3",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.4"
+    },
+    "devDependencies": {
+        "eslint": "^7.5.0"
+    },
+    "scripts": {
+        "test": "nodemon ./server.js",
+        "start-server": "node server.js",
+        "start": "electron app.js"
+    },
+    "author": "KronosDev <kronosdev.pro@gmail.com>",
+    "license": "MIT"
+}
