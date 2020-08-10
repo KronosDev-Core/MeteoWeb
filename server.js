@@ -11,8 +11,8 @@ let fs = require('fs');
 let https = require('https');
 require('dotenv').config();
 
-var privateKey = fs.readFileSync('KronosDev.dev-key.pem', 'utf8');
-var certificate = fs.readFileSync('KronosDev.dev.pem', 'utf8');
+var privateKey = fs.readFileSync(`${process.env.HOST_LISTEN}-key.pem`, 'utf8');
+var certificate = fs.readFileSync(`${process.env.HOST_LISTEN}.pem`, 'utf8');
 
 var credentials = { key: privateKey, cert: certificate };
 
@@ -34,7 +34,7 @@ app.use(express.json());
 app.use('/public', express.static(path.join(__dirname, 'assets')));
 
 app.get('/', (req, res) => {
-    if (req.headers.host === '127.0.0.1') res.redirect('https://kronos.dev/');
+    if (req.headers.host === '127.0.0.1') res.redirect(`https://${process.env.HOST_LISTEN}/`);
     res.sendFile(__dirname + '/index.html');
 });
 

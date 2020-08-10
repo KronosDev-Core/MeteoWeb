@@ -21,9 +21,7 @@
         "eslint": "^7.5.0"
     },
     "scripts": {
-        "test": "nodemon ./server.js",
-        "start-server": "node server.js",
-        "start": "electron app.js"
+        "start": "nodemon ./server.js"
     },
     "author": "KronosDev <kronosdev.pro@gmail.com>",
     "license": "MIT"
