@@ -19,7 +19,8 @@
         "nodemon": "^2.0.4"
     },
     "scripts": {
-        "start": "minify ./assets/private/client.js > ./assets/public/client.min.js && minify ./assets/private/client.css > ./assets/public/client.min.css && minify ./assets/private/index.html > ./assets/public/index.min.html && nodemon ./server.js"
+        "build": "minify ./assets/private/client.js > ./assets/public/client.min.js && minify ./assets/private/client.css > ./assets/public/client.min.css && minify ./assets/private/index.html > ./assets/public/index.min.html",
+        "start": "npm run-script build && nodemon ./server.js"
     },
     "author": "KronosDev <kronosdev.pro@gmail.com>",
     "license": "MIT"

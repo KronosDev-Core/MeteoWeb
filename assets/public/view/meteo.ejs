@@ -1,61 +1,73 @@
 <div class="card ml-auto mr-auto w-auto" style="height: fit-content">
-    <img src="https://openweathermap.org/img/wn/<%=data.weather[0].icon%>@4x.png" class="card-img-top " alt="<%=data.weather[0].description%>">
-    <div class="card-body ">
-        <p>
-            <%if (data.weather[0].main === "Rain") {%>
-                Description : <%=data.weather[0].description%> <br>
-                Temperature : <%=data.main.temp%> °C <br>
-                Pressure : <%=data.main.pressure%> hPa <br>
-                Humidity : <%=data.main.humidity%> % <br>
-                Visibility : <%=data.visibility%> m <br>
-                UV : <%=UV.value%> <br>
-                Wind : <br>
-                    - Speed : <%=data.wind.speed%> m/s <br>
-                    - Direction : <%=data.wind.deg%> ° <br>
-                    - Gust : <%=data.wind.gust%> m/s <br>
-                Clouds : <%=data.clouds.all%> % <br>
-                Rain :<br>
-                    - Volume -1h : <%=data.rain["1h"]%> mm
-            <% } else if (data.weather[0].main === "Snow") {%>
-                Description : <%=data.weather[0].description%> <br>
-                Temperature : <%=data.main.temp%> °C <br>
-                Pressure : <%=data.main.pressure%> hPa <br>
-                Humidity : <%=data.main.humidity%> % <br>
-                Visibility : <%=data.visibility%> m <br>
-                UV : <%=UV.value%> <br>
-                Wind : <br>
-                    - Speed : <%=data.wind.speed%> m/s <br>
-                    - Direction : <%=data.wind.deg%> ° <br>
-                    - Gust : <%=data.wind.gust%> m/s <br>
-                Clouds : <%=data.clouds.all%> % <br>
-                Snow : <br>
-                    - Volume -1h : <%=data.snow["1h"]%> mm
-            <% } else {%>
-                Description : <%= data.weather[0].description%> <br>
-                Temperature : <%=data.main.temp%> °C <br>
-                Pressure : <%=data.main.pressure%> hPa <br>
-                Humidity : <%=data.main.humidity%> % <br>
-                Visibility : <%=data.visibility%> m <br>
-                UV : <%=UV.value%> <br>
-                Wind : <br>
-                    - speed : <%=data.wind.speed%> m/s <br>
-                    - Direction : <%=data.wind.deg%> ° <br>
-                    - gust : <%=data.wind.gust%> m/s <br>
-                Clouds : <%=data.clouds.all%> %
-            <% } %>
-        </p>
-    </div>
+	<img src="https://openweathermap.org/img/wn/<%=data.weather[0].icon%>@4x.png" class="card-img-top "
+		alt="<%=data.weather[0].description%>">
+	<div class="card-body ">
+		<p>
+			<%if (data.weather[0].main === "Rain") {%>
+			Description :
+			<%=data.weather[0].description%> <br> Temperature :
+			<%=data.main.temp%> °C <br> Pressure :
+			<%=data.main.pressure%> hPa <br> Humidity :
+			<%=data.main.humidity%> % <br> Visibility :
+			<%=data.visibility%> m <br> UV :
+			<%=UV.value%> <br> Wind : <br> - Speed :
+			<%=data.wind.speed%> m/s <br> - Direction :
+			<%=data.wind.deg%> ° <br> - Gust :
+			<%=data.wind.gust%> m/s <br> Clouds :
+			<%=data.clouds.all%> % <br> Rain :<br> - Volume -1h :
+			<% if(data.rain !== undefined) {%>
+			<%=data.rain["1h"]%>
+			<%} else {%>
+			undefined
+			<%}%> mm
+                                                                        <% } else if (data.weather[0].main === "Snow") {%>
+			Description :
+			<%=data.weather[0].description%> <br> Temperature :
+			<%=data.main.temp%> °C <br> Pressure :
+			<%=data.main.pressure%> hPa <br> Humidity :
+			<%=data.main.humidity%> % <br> Visibility :
+			<%=data.visibility%> m <br> UV :
+			<%=UV.value%> <br> Wind : <br> - Speed :
+			<%=data.wind.speed%> m/s <br> - Direction :
+			<%=data.wind.deg%> ° <br> - Gust :
+			<%=data.wind.gust%> m/s <br> Clouds :
+			<%=data.clouds.all%> % <br> Snow : <br> - Volume -1h :
+			<%=data.snow["1h"]%> mm
+			<% } else {%>
+			Description :
+			<%= data.weather[0].description%> <br> Temperature :
+			<%=data.main.temp%> °C <br> Pressure :
+			<%=data.main.pressure%> hPa <br> Humidity :
+			<%=data.main.humidity%> % <br> Visibility :
+			<%=data.visibility%> m <br> UV :
+			<%=UV.value%> <br> Wind : <br> - speed :
+			<%=data.wind.speed%> m/s <br> - Direction :
+			<%=data.wind.deg%> ° <br> - gust :
+			<%=data.wind.gust%> m/s <br> Clouds :
+			<%=data.clouds.all%> %
+			<% } %>
+		</p>
+	</div>
 </div>
 <div id="CardGeo" class="card ml-auto mr-auto w-auto" style="height: fit-content">
-    <div class="card-body ">
-        <p>
-        Coordinate : </br>
-            - Longitude = <%=data.coord.lon%></br>
-            - Latitude = <%=data.coord.lat%></br>
-        City :</br>
-            - Name = <%=data.name%></br>
-            - ID = <%=data.id%></br>
-            - Country = <%=dataCountry.name%> <img class="rounded" style="width: 20px;" src="<%=dataCountry.flag%>"></br>
-        </p>
-    </div>
+	<div class="card-body ">
+		<p>
+			Coordinate : </br>
+			- Longitude =
+			<%=data.coord.lon%>
+			</br>
+			- Latitude =
+			<%=data.coord.lat%>
+			</br>
+			City :</br>
+			- Name =
+			<%=data.name%>
+			</br>
+			- ID =
+			<%=data.id%>
+			</br>
+			- Country =
+			<%=dataCountry.name%> <img class="rounded" style="width: 20px;" src="<%=dataCountry.flag%>"></br>
+		</p>
+	</div>
 </div>
